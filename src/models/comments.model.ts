@@ -1,8 +1,18 @@
 // comments.model.ts
-import { Column, Model, Table, ForeignKey, BelongsTo } from 'sequelize-typescript';
+import {
+  Column,
+  Model,
+  Table,
+  ForeignKey,
+  BelongsTo,
+} from 'sequelize-typescript';
 import { Posts } from './posts.model';
 
-@Table
+@Table({
+  tableName: 'comments',
+  timestamps: true,
+  underscored: true,
+})
 export class Comments extends Model {
   @Column
   content: string;

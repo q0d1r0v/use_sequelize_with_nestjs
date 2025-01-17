@@ -18,9 +18,7 @@ export class PostsService {
           required: false,
         },
       ],
-      order: [
-        ['created_at', 'DESC'],
-      ],
+      order: [['created_at', 'DESC']],
     });
   }
 
@@ -36,6 +34,7 @@ export class PostsService {
         data: post,
       };
     } catch (error) {
+      console.log(error);
       throw new HttpException(
         {
           statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
